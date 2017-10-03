@@ -1,0 +1,70 @@
+#: import AddMeetingButton ui.views.common.AddMeetingButton
+#: import CustomTimeLabel ui.views.common.CustomTimeLabel
+#: import CalendarButton ui.views.common.CalendarButton
+#: import StartStopButton ui.views.common.StartStopButton
+
+#: import GlobalStyle ui.views.styles.GlobalStyle
+#: import image ui.views.styles.image
+
+
+StatusScreen:
+<StatusScreen>:
+    id: status_screen
+    BoxLayout:
+        orientation: "vertical"
+        padding: [5, 10, 5, 20]
+        canvas:
+            Color:
+                rgba: GlobalStyle.menu_background_color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            id: current_date_time_label
+            size_hint_y: 1
+            font_size: GlobalStyle.standard_caption_font_size
+            font_name: GlobalStyle.standard_caption_font
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: 99
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 65
+                Label:
+                    id: meeting_title_label
+                    size_hint_x: 80
+                    font_size: GlobalStyle.huge_caption_font_size
+                    font_name: GlobalStyle.extrabold_caption_font
+                    text_size: self.width, self.height
+                    halign: "center"
+                    valign: "middle"
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 5
+                CustomTimeLabel:
+                    id: start_time_label
+                    size_hint_x: 20
+                Label:
+                    size_hint_x: 70
+                CustomTimeLabel:
+                    id: end_time_label
+                    size_hint_x: 20
+            ProgressBar:
+                id: meeting_progress_bar
+                value: 0
+                size_hint_y: 5
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 13
+                spacing: 40
+                Label:
+                    size_hint_x: 1
+
+                AddMeetingButton:
+
+                CalendarButton:
+
+                StartStopButton:
+
+                Label:
+                    size_hint_x: 1

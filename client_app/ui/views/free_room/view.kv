@@ -1,0 +1,56 @@
+#: import AddMeetingButton ui.views.common.AddMeetingButton
+#: import CalendarButton ui.views.common.CalendarButton
+
+#: import GlobalStyle ui.views.styles.GlobalStyle
+#: import image ui.views.styles.image
+
+
+FreeRoomScreen:
+<FreeRoomScreen>:
+    id: freerom_screen
+    BoxLayout:
+        orientation: "vertical"
+        padding: [5, 10, 5, 20]
+        canvas:
+            Color:
+                rgba: freerom_screen.background_color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            id: current_date_time_label
+            size_hint_y: 1
+            font_size: GlobalStyle.standard_caption_font_size
+            font_name: GlobalStyle.standard_caption_font
+        BoxLayout:
+            orientation: "vertical"
+            padding: [0, 100, 0, 0]
+            size_hint_y: 50
+            Label:
+                size_hint_y: 50
+                text: "Free"
+                font_size: GlobalStyle.extra_huge_caption_font_size
+                font_name: GlobalStyle.extrabold_caption_font
+                text_size: self.width, self.height
+                halign: "center"
+                valign: "middle"
+            Label:
+                size_hint_y: 20
+                id: next_event_link
+                markup: True
+                font_size: GlobalStyle.big_caption_font_size
+                font_name: GlobalStyle.semibold_caption_font
+                text_size: self.width, self.height
+                halign: "center"
+                valign: "middle"
+        BoxLayout:
+            orientation: "horizontal"
+            padding: [20, 0, 0, 5]
+            size_hint_y: 15
+            spacing: 40
+            Label:
+                size_hint_x: 10
+            AddMeetingButton:
+            CalendarButton:
+            Label:
+                size_hint_x: 10

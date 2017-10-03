@@ -1,0 +1,41 @@
+#: import GlobalStyle ui.views.styles.GlobalStyle
+#: import image ui.views.styles.image
+
+MeetingDetailsScreen:
+<MeetingDetailsScreen>:
+    id: meeting_details_screen
+    BoxLayout:
+        orientation: "vertical"
+        padding: [5, 10, 5, 20]
+        canvas:
+            Color:
+                rgba: GlobalStyle.menu_background_color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            size_hint_y: 80
+            orientation: "vertical"
+            padding: [50, 50, 50, 50]
+            Label:
+                id: meeting_name_label
+                font_size: GlobalStyle.big_caption_font_size
+                font_name: GlobalStyle.extrabold_caption_font
+            Label:
+                id: meeting_date_label
+                font_size: GlobalStyle.big_caption_font_size
+                font_name: GlobalStyle.semibold_caption_font
+            Label:
+                id: meeting_time_label
+                font_size: GlobalStyle.big_caption_font_size
+                font_name: GlobalStyle.semibold_caption_font
+            Label:
+                id: meeting_participants
+                font_size: GlobalStyle.standard_caption_font_size
+                font_name: GlobalStyle.standard_caption_font
+        BoxLayout:
+            id: buttons_container
+            orientation: "horizontal"
+            padding: [20, 0, 0, 5]
+            size_hint_y: 15
+            spacing: 40

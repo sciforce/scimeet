@@ -1,0 +1,30 @@
+#: import EditMeetingCarousel ui.views.edit_meeting.view.EditMeetingCarousel
+
+#: import GlobalStyle ui.views.styles.GlobalStyle
+#: import image ui.views.styles.image
+
+#: import MenuButton ui.views.common.MenuButton
+
+EditMeetingScreen:
+<EditMeetingScreen>:
+    id: edit_meeting_screen
+    BoxLayout:
+        orientation: "vertical"
+        canvas:
+            Color:
+                rgba: GlobalStyle.menu_background_color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            size_hint_y: 85
+            orientation: "vertical"
+            padding: [50, 20, 50, 30]
+            EditMeetingCarousel:
+                id: edit_meeting_carousel
+        BoxLayout:
+            id: buttons_container
+            orientation: "horizontal"
+            padding: [0, 0, 0, 20]
+            spacing: 10
+            size_hint_y: 15

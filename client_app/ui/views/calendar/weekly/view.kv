@@ -1,0 +1,22 @@
+#: import StackLayout kivy.uix.stacklayout
+
+#: import DayOfWeek ui.views.calendar.weekly.view.DayOfWeek
+
+<DayOfWeek>:
+    padding: [10, 1]
+    markup: True
+    size_hint_x: 0.5
+    size_hint_y: 0.33
+    font_size: "21sp"
+    valign: "top"
+    halign: "left"
+
+
+WeeklyScreen:
+
+<WeeklyScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        StackLayout:
+            orientation: "bt-rl"
+            id: calendar_layout

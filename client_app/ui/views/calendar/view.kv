@@ -1,0 +1,61 @@
+#: import CalendarCarousel ui.views.calendar.view.CalendarCarousel
+#: import CarouselBackButton ui.views.calendar.view.CarouselBackButton
+
+#:include ui/views/calendar/daily/view.kv
+#:include ui/views/calendar/weekly/view.kv
+
+#: import GlobalStyle ui.views.styles.GlobalStyle
+#: import image ui.views.styles.image
+
+#: import ForwardButton ui.views.common.ForwardButton
+#: import BackwardButton ui.views.common.BackwardButton
+
+
+<CarouselBackButton>:
+    size_hint_x: None
+    size_hint_y: None
+    border: 0, 0, 0, 0
+    size: GlobalStyle.standard_button_size
+    background_normal: image('back')
+    background_down: image('back_pressed')
+
+
+CalendarScreen:
+<CalendarScreen>:
+    id: calendar_screen
+    BoxLayout:
+        orientation: "vertical"
+        padding: [5, 0, 5, 20]
+        canvas:
+            Color:
+                rgba: GlobalStyle.menu_background_color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        CalendarCarousel:
+            id: calendar_carousel
+            size_hint_y: 85
+            on_index: calendar_screen.refresh()
+        BoxLayout:
+            orientation: "horizontal"
+            padding: [20, 0, 0, 0]
+            size_hint_y: 15
+            spacing: 40
+            Label:
+                size_hint_x: 10
+            CarouselBackButton:
+            BackwardButton:
+                id: previous_day_button
+            Label:
+                id: current_day_button
+                font_size: "20sp"
+                size_hint_x: 10
+                size_hint_y: None
+                border: 0, 0, 0, 0
+                size: GlobalStyle.standard_button_size
+                halign: "center"
+                font_name: GlobalStyle.semibold_caption_font
+            ForwardButton:
+                id: next_day_button
+            Label:
+                size_hint_x: 10

@@ -1,0 +1,21 @@
+#: set standard_caption_font "ui/res/fonts/exo2_light.ttf"
+#: set images_dir "ui/res/img"
+
+DailyScreen:
+
+<DailyScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        ScrollView:
+            id: scroller
+            size_hint_y: 85
+            width: self.parent.width
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            do_scroll_x: False
+            GridLayout:
+                padding: [5, 5, 5, 0]
+                id: daily_grid
+                cols: 2
+                spacing: 0
+                size_hint: (None, None)
+                width: self.parent.width

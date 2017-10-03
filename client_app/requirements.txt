@@ -1,0 +1,6 @@
+Cython==0.23
+kivy==1.9.1
+typing==3.5.3.0
+cachetools==2.0.0
+pygame
+google-api-python-client
